@@ -14,17 +14,12 @@ class CategoryController extends Controller
     public function index()
     {
         $data['category'] = DB::table('categories')->get();
-        $data['parent'] = DB::table('categories')->select('category')->get();
+        $data['parent'] = DB::table('categories')->select('parent')->distinct()->get();
         return view('category.add-category',$data);
     }
    
 
-    public function view_category(Request $request)
-    {
-         $data['category'] = DB::table('categories')->get();
-        return view('category.view-category',$data);
-    }
-
+   
     /**
      * Show the form for creating a new resource.
      */

@@ -12,6 +12,12 @@ class BrandController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function dashboard()
+    {
+
+        return view('pages.dashboard');
+    }
+   
     public function index()
     {
         $data['brand'] = DB::table('brands')->get();

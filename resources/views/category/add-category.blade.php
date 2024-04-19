@@ -57,7 +57,7 @@
                   <select name="parent" class="form-control">
                     <option value="">Select</option>
                     @foreach($parent as $parents)
-                    <option value="{{$parents->category}}">{{$parents->category}}</option>
+                    <option value="{{$parents->parent}}">{{$parents->parent}}</option>
                     @endforeach
                   </select>
                 </div>
@@ -100,7 +100,7 @@
                   <select name="parent" id="parent" class="form-control">
 
                     @foreach($parent as $parents)
-                    <option value="{{$parents->category}}">{{$parents->category}}</option>
+                    <option value="{{$parents->parent}}">{{$parents->parent}}</option>
                     @endforeach
 
                   </select>
@@ -136,18 +136,22 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
+                  <th>Sr No</th>
+                  <th>Market</th>
                     <th>Category</th>
                     <th> Sub-Category</th>
-
+                    <th> Shelf Life</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($category as $categorys)
                   <tr>
+                    <td></td>
+                    <td>{{$categorys->market_type}}</td>
                     <td>{{$categorys->parent}}</td>
                     <td>{{$categorys->category}}</td>
-
+                    <td>{{$categorys->shelf_life}}</td>
                     <td>
                       <div class="btn-group">
                         <button type="button" class="btn btn-default">Action</button>
